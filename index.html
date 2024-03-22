@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>temperature-converter</title>
+    <style>
+        #hed {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            color: #000000;
+        }
+
+        .intpot {
+            display: flex;
+            justify-content: center;
+            padding: 20px 20px;
+            margin-left: 10px;
+        }
+
+        .int {
+            margin-right: 20px;
+            padding: 10px 12px;
+            text-align: center;
+            font-size: 16px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 id="hed">temperature converter</h1>
+
+        <div class="intpot">
+        
+            <input class="int" type="number" value="0" id="imp1">
+        
+
+            <input class="int" type="number" value="32" id="imp2">
+        </div>
+    </section>
+    <script>
+        let imp1 =document.getElementById("imp1");
+        let imp2 =document.getElementById("imp2");
+      
+
+        imp1.addEventListener('input', function () {
+            let c = this.value;
+            let g =(c * 9/5) + 32;
+            imp2.value=g;
+        })
+        imp2.addEventListener('input', function () {
+            let g = this.value;
+            let c =(g - 32) * 5/9;
+            imp1.value=c;
+        })
+
+    </script>
+
+</body>
+
+</html>
